@@ -1,0 +1,21 @@
+// Variables globales
+@import "gv";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// -----[ Media queries ]-----
+
+// Mobile [First]
+@import "./media/mobile";
+
+// Tablet
+@import "./media/tablet";
+
+// desktop
+@import "./media/desktop";

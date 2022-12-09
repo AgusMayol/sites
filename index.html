@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description"
+        content="Todos los enlaces a mis redes sociales, sitio web y últimas novedades relacionadas a la programacion y mi vida personal.">
+    <meta name="keywords"
+        content="Agus, Agustin, Mayol, Agustin Mayol,  Agus Mayol, agus.mayol, Agus mayol links, programacion, developer, fullstack, frontend, backend, front-end, back-end, full-stack, html, css, js, sass, scss">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- SCRIPTS -->
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/hammer.js"></script>
+
+    <title>Agus Mayol | Links</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><img src="./assets/svg/share.svg" alt="Share Icon"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="foto">
+        <img src="./assets/images/foto.jpg" alt="Una foto mía en un espejo, solo se ve mi cara linda">
+    </div>
+
+
+    <div class="nombre">
+        <h1>Agustín Mayol</h1>
+    </div>
+
+    <div class="descripcion">
+        <p>🇦🇷💻✨🏳️‍🌈
+            <br>
+            Me gusta programar, escuchar musica y dejar libre la creatividad
+        </p>
+    </div>
+
+
+
+    <div class="links-contenedor">
+
+        <div>
+            <a href="https://agusmayol.github.io/portfolio" target="_blank" id="myElement">
+                <div>
+                    <object data="./assets/svg/briefcase.svg" width="3.5em" height="3.5em"
+                        aria-label="Briefcase icon"></object>
+                </div>
+                <span>Portfolio</span>
+                <button></button>
+            </a>
+
+            <button class="share"><img src="./assets/svg/share.svg" alt="Share Icon"></button>
+        </div>
+
+
+        <div>
+            <a href="https://github.com/agusmayol" target="_blank">
+                <div>
+                    <img src="./assets/svg/github.svg" alt="Github Logo">
+                </div>
+                <span>GitHub</span>
+                <button><img src="./assets/svg/share.svg" alt="Share Icon"></button>
+            </a>
+
+        </div>
+
+        <div>
+            <a href="#" target="_blank">
+                <div>
+                    <img src="./assets/images/linkedin.png" alt="Linkedin Logo">
+                </div>
+                <span>Linkedin</span>
+                <button></button>
+            </a>
+
+        </div>
+
+        <div>
+            <a href="https://instagram.com/agus.mayol" target="_blank">
+                <div>
+                    <img src="./assets/svg/instagram.svg" alt="Instagram Logo">
+                </div>
+                <span>Instagram</span>
+                <button></button>
+            </a>
+
+        </div>
+
+        <div>
+            <a href="https://twitter.com/mayolnotfound">
+                <div class="no-rounded">
+                    <img class="no-rounded" src="./assets/svg/twitter.svg" alt="Twitter Logo">
+                </div>
+                <span>Twitter</span>
+                <button></button>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        var myElement = document.getElementById('myElement', "myElement2");
+
+        // create a simple instance
+        // by default, it only adds horizontal recognizers
+        var mc = new Hammer(myElement);
+
+        // let the pan gesture support all directions.
+        // this will block the vertical scrolling on a touch-device while on the element
+        mc.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+
+        // listen to events...
+        mc.on("swipeleft swiperight", function (ev) {
+            //myElement.textContent = ev.type + " gesture detected.";
+
+            if (ev.type == "swipeleft") {
+                //myElement.style.transform = "translate(-120px)";
+                myElement.classList.toggle('swipe');
+                //myElement.style.transition = "all " + (ev.velocityXs + 1);
+                document.querySelector('.share').style.display = "block";
+            } else if (ev.type == "swiperight") {
+                //myElement.style.transform = "translate(0)";
+                //myElement.style.transition = "all " + (ev.velocityXs + 1);
+                myElement.classList.toggle('swipe');
+                document.querySelector('.share').style.display = "none";
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
